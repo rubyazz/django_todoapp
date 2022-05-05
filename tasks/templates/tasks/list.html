@@ -1,3 +1,6 @@
+
+
+
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 <style>
@@ -44,10 +47,30 @@
 		background-color: #ffae19;
 		border-color: #e59400;
 	}
-
+	#heh{
+	color:black;
+	}
+	#he{
+	color:black;
+	}
+	.logout{
+	color:#000000;
+	}
 </style>
 
+
+
 <div class="center-column">
+
+	{% if request.user.is_authenticated %}
+	Welcome, {{ user.username }} | <a class="logout" href="{% url 'logout' %}">Logout</a>
+	{% else %}
+		<span class="navbar-text" >
+	<a id="heh" href="{% url 'register'%}">Register</a> | <a  id="he" href="{% url 'login'%}">Login</a>
+</span>
+	{% endif %}
+
+
 
 	<form method="POST" action="/">
 		{% csrf_token %}
