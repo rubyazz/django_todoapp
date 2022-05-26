@@ -4,9 +4,11 @@ charset-normalizer==2.0.12
 Django==4.0.4
 django-cachekiller==0.8.1
 django-distill==2.9.2
+gunicorn==20.1.0
 idna==3.3
 register==0.1
 requests==2.27.1
 sqlparse==0.4.2
 tzdata==2022.1
 urllib3==1.26.9
+whitenoise==6.1.0
